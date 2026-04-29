@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@1,400;1,700;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-medical-primary: #22d3ee;
+  --color-medical-secondary: #a855f7;
+  --color-medical-accent: #05070A;
+  --color-medical-bg: #05070A;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-medical-bg)] text-slate-200 antialiased font-sans;
+  }
+}
+
+.scrolling-container {
+  scroll-behavior: smooth;
+  @apply bg-[#05070A] min-h-screen relative;
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.05), transparent),
+              radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.05), transparent);
+}
+
+.card-medical {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-500 shadow-2xl;
+}
+
+.card-medical:hover {
+  @apply border-cyan-500/30 bg-white/10;
+}
+
+.text-narrative {
+  @apply font-serif italic text-slate-300;
+}
+
+.text-data-label {
+  @apply font-mono uppercase tracking-widest text-[10px] text-cyan-400 font-bold;
+}
